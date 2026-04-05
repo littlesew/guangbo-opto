@@ -204,20 +204,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
           // 解析数值和单位
           const match = text.match(/^([\d.]+)(.*)$/);
-          if (match) {
+          if (match && match[1]) {
             num = parseFloat(match[1]);
             suffix = match[2] || '';
-          }
+            
+            // 根据数值类型选择动画时长
+            let duration = 1500;
+            if (num >= 100) {
+              duration = 2000;
+            } else if (num < 1) {
+              duration = 1000;
+            }
 
-          // 根据数值类型选择动画时长
-          let duration = 1500;
-          if (num >= 100) {
-            duration = 2000;
-          } else if (num < 1) {
-            duration = 1000;
+            animateValue(entry.target, 0, num, duration, suffix);
           }
-
-          animateValue(entry.target, 0, num, duration, suffix);
+          // 非数字值（如G.657A2）不动画，直接显示
           countObserver.unobserve(entry.target);
         }
       });
