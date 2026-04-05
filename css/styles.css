@@ -640,35 +640,57 @@ section {
 
 .spec-table {
   width: 100%;
-  border-collapse: collapse;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--color-bg);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .spec-table th,
 .spec-table td {
-  padding: 16px 20px;
+  padding: 18px 24px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.spec-table th:first-child,
+.spec-table td:first-child {
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .spec-table th {
   font-weight: 600;
-  color: var(--color-primary);
-  background: var(--color-white);
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #00B4A0 100%);
+  font-size: 0.9375rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .spec-table td {
   color: var(--color-text);
+  font-size: 0.9375rem;
 }
 
-.spec-table tr:last-child td {
+.spec-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.spec-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-.spec-table tr:hover td {
-  background: rgba(0, 212, 170, 0.05);
+.spec-table tbody tr:hover td {
+  background: linear-gradient(90deg, rgba(0, 212, 170, 0.08) 0%, rgba(0, 180, 160, 0.04) 100%);
+}
+
+.spec-table td strong {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /* 产品特性 */
