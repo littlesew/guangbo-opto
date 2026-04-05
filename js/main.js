@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // 使用Intersection Observer触发计数动画
-  const specValues = document.querySelectorAll('.spec-value');
+  const specValues = document.querySelectorAll('.spec-value:not([data-no-animate])');
   if (specValues.length > 0 && 'IntersectionObserver' in window) {
     const countObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
