@@ -1585,4 +1585,106 @@ section {
     flex-direction: column;
     gap: 8px;
   }
+
+  /* 英文版移动端优化 */
+  html[lang="en"] .hero-title,
+  :lang(en) .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  html[lang="en"] .hero-title span,
+  :lang(en) .hero-title span {
+    display: block;
+    margin-top: 8px;
+  }
+
+  html[lang="en"] .hero-subtitle,
+  :lang(en) .hero-subtitle {
+    font-size: 0.9375rem;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  html[lang="en"] .section-title,
+  :lang(en) .section-title {
+    font-size: 1.75rem;
+  }
+
+  html[lang="en"] .feature-card,
+  :lang(en) .feature-card {
+    padding: 24px 16px;
+  }
+
+  html[lang="en"] .feature-title,
+  :lang(en) .feature-title {
+    font-size: 1rem;
+  }
+
+  html[lang="en"] .feature-desc,
+  :lang(en) .feature-desc {
+    font-size: 0.875rem;
+  }
+
+  /* 英文版产品卡片移动端 */
+  html[lang="en"] .product-card,
+  :lang(en) .product-card {
+    margin-bottom: 16px;
+  }
+
+  html[lang="en"] .product-info h3,
+  :lang(en) .product-info h3 {
+    font-size: 1.125rem;
+  }
+
+  html[lang="en"] .product-info p,
+  :lang(en) .product-info p {
+    font-size: 0.8125rem;
+  }
+
+  /* 英文版应用场景移动端 */
+  html[lang="en"] .app-item,
+  :lang(en) .app-item {
+    height: 200px;
+    padding: 20px;
+  }
+
+  html[lang="en"] .app-item h3,
+  :lang(en) .app-item h3 {
+    font-size: 1.125rem;
+  }
+
+  html[lang="en"] .app-item p,
+  :lang(en) .app-item p {
+    font-size: 0.8125rem;
+  }
+
+  /* 英文版CTA移动端 */
+  html[lang="en"] .cta-title,
+  :lang(en) .cta-title {
+    font-size: 1.5rem;
+  }
+
+  html[lang="en"] .cta-text,
+  :lang(en) .cta-text {
+    font-size: 0.9375rem;
+    padding: 0 16px;
+  }
+
+  /* 英文版页脚移动端 */
+  html[lang="en"] .footer-col .footer-links span,
+  :lang(en) .footer-col .footer-links span {
+    font-size: 0.8125rem;
+  }
+
+  /* 产品参数区英文移动端 */
+  html[lang="en"] .spec-value,
+  :lang(en) .spec-value {
+    font-size: 1.25rem;
+  }
+
+  html[lang="en"] .spec-label,
+  :lang(en) .spec-label {
+    font-size: 0.75rem;
+  }
 }
