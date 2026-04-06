@@ -279,6 +279,33 @@
     </div>
   </footer>
 
+  <!-- 自动语言检测 -->
+  <script>
+    (function() {
+      var lang = localStorage.getItem('siteLang');
+      if (!lang) {
+        fetch('https://ipapi.co/json/')
+          .then(function(response) { return response.json(); })
+          .then(function(data) {
+            var country = data.country_code || '';
+            if (country !== 'CN' && country !== 'HK' && country !== 'MO' && country !== 'TW') {
+              // 非中国地区，保持英文
+              localStorage.setItem('siteLang', 'en');
+            } else {
+              // 中国地区，重定向到中文
+              localStorage.setItem('siteLang', 'zh');
+              window.location.href = 'index.html';
+            }
+          })
+          .catch(function() {
+            // API失败时保持英文
+            localStorage.setItem('siteLang', 'en');
+          });
+      } else if (lang === 'zh' && window.location.href.indexOf('index_en.html') > -1) {
+        window.location.href = 'index.html';
+      }
+    })();
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

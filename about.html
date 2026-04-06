@@ -246,6 +246,30 @@
     </div>
   </footer>
 
+  <!-- 自动语言检测 -->
+  <script>
+    (function() {
+      var lang = localStorage.getItem('siteLang');
+      if (!lang) {
+        fetch('https://ipapi.co/json/')
+          .then(function(response) { return response.json(); })
+          .then(function(data) {
+            var country = data.country_code || '';
+            if (country !== 'CN' && country !== 'HK' && country !== 'MO' && country !== 'TW') {
+              localStorage.setItem('siteLang', 'en');
+              window.location.href = 'about_en.html';
+            } else {
+              localStorage.setItem('siteLang', 'zh');
+            }
+          })
+          .catch(function() {
+            localStorage.setItem('siteLang', 'zh');
+          });
+      } else if (lang === 'en' && window.location.href.indexOf('about.html') > -1) {
+        window.location.href = 'about_en.html';
+      }
+    })();
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
